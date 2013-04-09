@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+
+App by Ivan Malopinsky: http://imsky.co
+Icons by PJ Onori: http://www.somerandomdude.com/work/iconic/
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>done - get it done</title>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="iconic fill/iconic_fill.css">
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<style type="text/css">
+html {font-family:Montserrat;background:#325675 url(sky7.jpg) no-repeat center center fixed;background-size:cover;color:#fff;}
+</style>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.0.8/es5-shim.min.js"></script>
+<script src="js/amplify.store.js"></script>
+<script data-main="js/done.js" src="js/require.js"></script>
+<script type="text/javascript">
+require.config({
+	paths: {
+		"Hogan": "http://cdnjs.cloudflare.com/ajax/libs/hogan.js/2.0.0/hogan"
+	}
+})
+</script>
+<link rel="stylesheet" href="done.css" class="cssfx">
+<script src="http://imsky.github.io/cssFx/cssfx.min.js"></script>
+</head>
+<body>
+<div id="error">Error here</div>
+<div id="settings">
+	<div class="settings-button" id="clearbutton">clear tasks</div>
+</div>
+<div id="container">
+<div id="settings-button"><span class="iconic cog"></span></div>
+<h1>done</h1>
+<div id="page">
+	<div class="row" id="addtask">
+		<div class="el taskname">
+			<input id="taskname" maxlength="30" tabindex="1" placeholder="Finish this app">
+		</div>
+		<div class="el tasktime">
+			<input id="tasktime" readonly value="&#188; h" tabindex="2">
+		</div>
+		<div class="el button timebutton icon">
+			<span class="iconic plus"></span>
+		</div>
+		<div class="el button taskbutton">
+			<span>add</span>
+		</div>
+	</div>
+	<div id="tasks"><span class="notice">get started by adding a task</span></div>
+	<div id="footer">
+		<span>Created by <a href="http://imsky.co">Ivan Malopinsky</a></span>
+		<iframe src="http://ghbtns.com/github-btn.html?user=imsky&repo=done&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+		<a href="https://twitter.com/imskyco" class="twitter-follow-button" data-show-count="false">Follow @imskyco</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+</div>
+</div>
+</body>
+</html>
