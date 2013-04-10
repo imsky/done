@@ -16,32 +16,35 @@ function(def, Data, Templates){
 			this.on("click", {
 				"control": function(e){
 					if(this.task == Data.active()){
-						this.trigger("pause")
+						this.trigger("tasks:pause")
 					}
 					else{
-						this.trigger("pause")
-						this.trigger("play")
+						this.trigger("tasks:pause")
+						this.trigger("task:play")
 					}
 					e.preventDefault();
 				},
 				"delete": function(e){
-					this.trigger("delete", this.task)
+					this.trigger("task:delete", this.task)
 					e.preventDefault();
 				}
 			})
 
-			this.on("play", function(){
+			this.on("task:play", function(){
 				Data.setActive(this.task)
-				this.trigger("update")
+				this.trigger("tasks:update")
 			})
 
-			this.on(document, "update", function(){
+			this.on(document, "tasks:update", function(){
 				if(this.task.minutes == 0){
-					if(!this.task.complete){
+					if(!this.$node.hasClass("finished")){
 						this.select("time").html("✔")
 						this.$node.addClass("finished")
+					}
+					
+					if(!this.task.complete){
 						this.task.complete = true;
-						this.trigger("complete", this.task)
+						this.trigger("task:complete", this.task)
 					}
 				}
 				else{

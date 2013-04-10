@@ -33,7 +33,7 @@ function(def){
 		this.after("initialize", function(){
 			this.on("click", {
 				'add-button': function(e){
-					this.trigger("addTask", {
+					this.trigger("tasks:add", {
 						title: this.select('task-name').val(), 
 						minutes: minutes
 					})

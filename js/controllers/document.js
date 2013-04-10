@@ -4,7 +4,12 @@ define([
 		'templates',
 ], function (def, Data, Templates) {
 	function component() {
-		var minutes = Math.floor((new Date()).getTime() / 1000 / 60);
+
+		function getMinutes(){
+			return Math.floor((new Date()).getTime() / 1000 / 60);
+		}
+
+		var minutes = getMinutes()
 
 		this.defaultAttrs({
 			'settings-button': "#settings-button"
@@ -21,48 +26,29 @@ define([
 				}
 			})
 
-			this.on("addTask", function (evt, task) {
-				if (Data.validateTask(task)) {
-					var id = Data.push(task)
-					this.trigger("attachTask", id)
-				} else {
-					this.trigger("error", {
-						text: "Task title needs to filled in and/or task time should be valid"
-					})
-				}
-			})
-
-			this.on("importTasks", function(){
-				Data.clear()
-				Data.load()
-				if(Data.count() > 0){
-					var tasks = Data.tasks()
-					for(i = 0; i < tasks.length; i++){
-						if(Data.validateTask(tasks[i])){
-							this.trigger("attachTask", tasks[i].id)
-						}
-					}
-				}
-			})
-
-			this.on("pause", function () {
+			this.on("tasks:pause", function () {
 				Data.setActive(null)
-				this.trigger("update")
+				this.trigger("tasks:update")
 			})
 
-			this.on("complete", function (evt, task) {
+			this.on("task:play", function(){
+				minutes = getMinutes()
+			})
+
+			this.on("task:complete", function (evt, task) {
 				Data.setFirstActive(task)
-				this.trigger("update")
+				this.trigger("tasks:update")
 			})
 
-			this.trigger("importTasks")
+			this.trigger("tasks:import")
 
 			setInterval(function () {
-				var m = Math.floor((new Date()).getTime() / 1000 / 60);
+				var m = getMinutes();
 				if (m > minutes) {
 					minutes = m;
 					Data.reduceMinutes();
-					that.trigger("update")
+					that.trigger("tasks:update")
+					Data.persist()
 				}
 			}, 5000)
 		})

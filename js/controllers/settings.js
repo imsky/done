@@ -1,8 +1,7 @@
 define([
-	'flight/lib/component',
-	'data'
+	'flight/lib/component'
 ],
-function(def, Data){
+function(def){
 	function component(){
 		this.defaultAttrs({
 				'clear': '#clearbutton'
@@ -10,7 +9,7 @@ function(def, Data){
 		this.after("initialize", function(){
 			this.on("click", {
 				"clear": function(){
-					this.trigger("clear")
+					this.trigger("tasks:clear")
 				}
 			})
 		})

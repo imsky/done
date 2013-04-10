@@ -4,7 +4,7 @@
 
 #container {position:relative;padding-top:50px;}
 
-h1 {text-align:center;letter-spacing:-2px;font-size:50px;margin:0;margin-bottom:50px;}
+h1 {width:600px;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
 a {color:#fff;text-decoration:none;}
 a:hover {text-decoration:underline;}
 
@@ -19,10 +19,10 @@ a:hover {text-decoration:underline;}
 .row .el.button {color:#325675;background:#fff;cursor:pointer;user-select:none;}
 #taskname {text-indent:10px;width:100%;}
 .el.tasktime {border-top-right-radius:0px;border-bottom-right-radius:0px}
-#tasktime {text-align:center;width:100%;text-indent:2px;}
+#tasktime {text-align:center;width:100%;text-indent:1px;}
 .row .timebutton {width:5%;border-top-left-radius:0px;border-bottom-left-radius:0px;line-height:55px}
 #addtask.row .taskbutton {width:20%;margin-left:2.5%;}
-.timebutton span {display:block;font-size:27px;}
+.timebutton span {display:block;font-size:20px;text-indent:2px;}
 #addtask .taskbutton span {color:#325675;text-align:center;display:block;line-height:50px;font-weight:bold;font-size:20px;}
 
 #tasks {margin-top:50px;}
@@ -32,7 +32,7 @@ a:hover {text-decoration:underline;}
 #tasks .tasktime {width:20%;text-align:center;}
 #tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0;border:solid 1px #fff;color:#fff;}
 #tasks .taskbutton {width:9%;}
-#tasks .controlbutton {text-indent:1px;}
+.iconic.play {text-indent:4px;}
 #tasks .deletebutton {margin-left:2%}
 
 #tasks .notice {text-align:center;display:block;font-size:30px;margin:100px 0px;}

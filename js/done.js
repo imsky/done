@@ -15,5 +15,4 @@ require([
 	TasksController.attachTo("#tasks")
 	SettingsController.attachTo("#settings")
 	DocumentController.attachTo(document)
-	window.d = Data;
 })

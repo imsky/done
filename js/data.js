@@ -3,6 +3,7 @@ define([], function () {
 	var active = null;
 	return {
 		load: function(){
+			this.clear()
 			var local = amplify.store("donejs")
 			if(local){
 				this.recover(local)
@@ -24,13 +25,13 @@ define([], function () {
 			return id
 		},
 		validateTask: function(task){
-			return !isNaN(task.minutes) && task.minutes >= 15 && task.title && task.title.length > 0
+			return !isNaN(task.minutes) && task.minutes >= 0 && task.title && task.title.length > 0
 		},
 		deleteTask: function(task){
 			if(active == task){
 				this.setFirstActive(task)
 			}
-			else{
+			else if(this.count() == 0){
 				this.setActive(null)
 			}
 			tasks = tasks.filter(function(t){
@@ -82,13 +83,17 @@ define([], function () {
 		},
 		updateTimes: function () {
 			tasks.forEach(function(task){
-				if (task.minutes > 0) {
-					if (task.minutes < 60) {
-						task.time = task.minutes + "m"
-					} else if (task.minutes < 360) {
-						task.time = Math.floor(task.minutes / 60) + "h " + (task.minutes % 60) + "m"
-					} else {
-						task.time = Math.floor(task.minutes / 60) + "h"
+				var hours = Math.floor(task.minutes / 60)
+				var minutes = (task.minutes % 60)
+				if(task.minutes > 0){
+
+					task.time = hours + "h"
+
+					if(hours == 0){
+						task.time = minutes + "m"
+					}
+					else if(hours > 0 && minutes > 0 && hours <= 6){
+						task.time += " " + minutes + "m"
 					}
 				}
 			})
