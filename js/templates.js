@@ -1,4 +1,4 @@
-define(['Hogan'], function(){
+define(['lib/hogan'], function(){
 	return {
 		emptynotice: '<span class="notice">get started by adding a task</span>',
 		pause: '<span class="iconic pause"></span>',

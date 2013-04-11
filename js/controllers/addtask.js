@@ -27,7 +27,8 @@ function(def){
 			'add-button': ".taskbutton",
 			'time-button': ".timebutton",
 			'task-name': "#taskname",
-			'task-time': "#tasktime"
+			'task-time': "#tasktime",
+			'task-time-area': '.tasktime'
 		})
 
 		this.after("initialize", function(){
@@ -39,6 +40,9 @@ function(def){
 					})
 					this.trigger("reset")
 					e.preventDefault();
+				},
+				'task-time-area': function(e){
+					this.trigger(this.select('time-button'), "click")
 				},
 				'time-button': function(e){
 					if(minutes >= 12*60){
@@ -56,7 +60,7 @@ function(def){
 			})
 
 			this.on("renderTime", function(){
-				this.select('task-time').val($("<div />").html(render_time(minutes)).html())
+				this.select('task-time').html($("<div />").html(render_time(minutes)).html())
 			})
 
 			this.trigger("renderTime")

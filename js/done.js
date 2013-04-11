@@ -1,6 +1,6 @@
 require([
 		'flight/lib/index',
-		'Hogan',
+		'lib/hogan',
 		'templates',
 		'data',
 		'controllers/document',

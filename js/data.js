@@ -48,6 +48,7 @@ define([], function () {
 		},
 		setActive: function(task){
 			active = task
+			this.persist()
 		},
 		setFirstActive: function(excluded){
 			var task = null;
@@ -78,13 +79,14 @@ define([], function () {
 		},
 		reduceMinutes: function () {
 			if(!active) return;
-			active.minutes--;
+			active.minutes -= 1;
 			this.updateTimes()
+			this.persist()
 		},
 		updateTimes: function () {
 			tasks.forEach(function(task){
 				var hours = Math.floor(task.minutes / 60)
-				var minutes = (task.minutes % 60)
+				var minutes = Math.floor((task.minutes % 60))
 				if(task.minutes > 0){
 
 					task.time = hours + "h"
