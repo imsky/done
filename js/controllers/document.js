@@ -5,12 +5,6 @@ define([
 ], function (def, Data, Templates) {
 	function component() {
 
-		function getMinutes(){
-			return Math.floor((new Date()).getTime() / 1000 / 60);
-		}
-
-		var minutes = getMinutes()
-
 		this.defaultAttrs({
 			'settings-button': "#settings-button"
 		})
@@ -18,6 +12,20 @@ define([
 		this.after("initialize", function () {
 
 			var that = this;
+			var notificationTimer = null, minuteTimer = null;
+			var originalTitle = $("title").text()
+
+			function startTimer(){
+				stopTimer();
+				minuteTimer = setInterval(function(){
+					Data.reduceMinutes()
+					that.trigger("tasks:update")
+				}, 60*1000)
+			}
+
+			function stopTimer(){
+				clearTimeout(minuteTimer)
+			}
 
 			this.on("click", {
 				'settings-button': function (e) {
@@ -27,12 +35,13 @@ define([
 			})
 
 			this.on("tasks:pause", function () {
+				stopTimer();
 				Data.setActive(null)
 				this.trigger("tasks:update")
 			})
 
 			this.on("task:play", function(){
-				minutes = getMinutes()
+				startTimer();
 				this.trigger("favicon:update")
 			})
 
@@ -54,14 +63,15 @@ define([
 			})
 
 			this.on("notification:complete", function(){
-				var t = document.title;
+				var t = originalTitle;
 				var nt = t + " " +  Templates.check
 				var count = 10;
 				var sound = new Howl({
 					urls: ['audio/done.mp3', 'audio/done.ogg']
 				}).play()
 
-				var i = setInterval(function(){
+				clearTimeout(notificationTimer)
+				notificationTimer = setInterval(function(){
 					if(count > 0 && count % 2 == 0){
 						document.title = nt;
 					}
@@ -78,15 +88,7 @@ define([
 
 			this.trigger("tasks:import")
 
-			setInterval(function () {
-				var m = getMinutes();
-				if (m > minutes) {
-					minutes = m;
-					Data.reduceMinutes();
-					that.trigger("tasks:update")
-					Data.persist()
-				}
-			}, 5000)
+			startTimer();
 		})
 	}
 	return def(component)
