@@ -44,7 +44,7 @@ define([
 
 			this.on("favicon:update", function(){
 				var active = Data.active();
-				if(active){
+				if(active && active._minutes && active.minutes){
 					var progress = 100 * (1 - (active.minutes/active._minutes).toFixed(2))
 					Piecon.setProgress(progress)
 				}
@@ -57,6 +57,10 @@ define([
 				var t = document.title;
 				var nt = t + " " +  Templates.check
 				var count = 10;
+				var sound = new Howl({
+					urls: ['audio/done.mp3', 'audio/done.ogg']
+				}).play()
+
 				var i = setInterval(function(){
 					if(count > 0 && count % 2 == 0){
 						document.title = nt;
