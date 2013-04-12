@@ -39,7 +39,7 @@ function(def, Data, Templates){
 				if(this.task.minutes == 0){
 					this.$node.removeClass("active")
 					if(!this.$node.hasClass("finished")){
-						this.select("time").html("✔")
+						this.select("time").html(Templates.check)
 						this.$node.addClass("finished")
 					}
 					

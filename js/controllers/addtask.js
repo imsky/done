@@ -36,7 +36,8 @@ function(def){
 				'add-button': function(e){
 					this.trigger("tasks:add", {
 						title: this.select('task-name').val(), 
-						minutes: minutes
+						minutes: minutes,
+						_minutes: minutes
 					})
 					this.trigger("reset")
 					e.preventDefault();

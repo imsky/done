@@ -15,4 +15,10 @@ require([
 	TasksController.attachTo("#tasks")
 	SettingsController.attachTo("#settings")
 	DocumentController.attachTo(document)
+
+	Piecon.setOptions({
+		color:"#ffffff",
+		background: "#3B5F7F",
+		shadow: "#3B5F7F"
+	})
 })

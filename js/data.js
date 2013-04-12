@@ -28,12 +28,7 @@ define([], function () {
 			return !isNaN(task.minutes) && task.minutes >= 0 && task.title && task.title.length > 0
 		},
 		deleteTask: function(task){
-			if(active == task){
-				this.setFirstActive(task)
-			}
-			else if(this.count() == 0){
-				this.setActive(null)
-			}
+			this.setActive(null)
 			tasks = tasks.filter(function(t){
 				return t !== task
 			})

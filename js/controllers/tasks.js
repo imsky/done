@@ -77,6 +77,7 @@ function(def, Data, Templates, TaskController){
 				else{
 					this.$node.removeClass("running")
 				}
+				this.trigger("favicon:update")
 			})
 		})
 	}

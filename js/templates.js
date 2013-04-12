@@ -1,5 +1,6 @@
 define(['lib/hogan'], function(){
 	return {
+		check: $("<div />").html("&#10004;").html(),
 		emptynotice: '<span class="notice">get started by adding a task</span>',
 		pause: '<span class="iconic pause"></span>',
 		play: '<span class="iconic play"></span>',
