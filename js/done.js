@@ -20,8 +20,8 @@ require([
 	DocumentController.attachTo(document)
 
 	Piecon.setOptions({
-		color:"#ffffff",
-		background: "#3B5F7F",
+		color:"#3B5F7F",
+		background: "#ffffff",
 		shadow: "#3B5F7F"
 	})
 })

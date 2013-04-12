@@ -56,7 +56,11 @@ body.settings #settings {height:75px;padding-top:25px;}
 
 @media only screen and (max-width: 320px) {
 @-ms-viewport { width: device-width; }
-h1, #page {width:300px;}
+
+#error {line-height:25px;height:0px;}
+#error.visible {height:auto;}
+
+h1, #page {width:280px;}
 #addtask .taskname {width:100%;margin-bottom:5%}
 #addtask .tasktime {width:30%;margin-left:0;}
 .row .timebutton {width:10%;}
