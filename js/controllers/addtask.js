@@ -63,16 +63,16 @@ function(def){
 				this.select('task-time').html($("<div />").html(render_time(minutes)).html())
 			})
 
-			this.trigger("renderTime")
-
-			this.select('task-name').get(0).focus();
-
 			this.on("reset", function(e){
 				minutes = 15;
 				this.trigger("renderTime")
 				this.select('task-name').val("")
 				e.stopPropagation()
 			})
+
+			this.trigger("renderTime")
+
+			this.select('task-name').get(0).focus();
 		})
 	}
 	return def(component)

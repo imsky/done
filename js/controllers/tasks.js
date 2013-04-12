@@ -69,6 +69,15 @@ function(def, Data, Templates, TaskController){
 				Data.deleteAllTasks()
 				this.trigger("emptycheck", true)
 			})
+
+			this.on(document, "tasks:update", function(){
+				if(Data.active()){
+					this.$node.addClass("running")
+				}
+				else{
+					this.$node.removeClass("running")
+				}
+			})
 		})
 	}
 	return def(component)

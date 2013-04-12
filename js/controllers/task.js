@@ -37,6 +37,7 @@ function(def, Data, Templates){
 
 			this.on(document, "tasks:update", function(){
 				if(this.task.minutes == 0){
+					this.$node.removeClass("active")
 					if(!this.$node.hasClass("finished")){
 						this.select("time").html("✔")
 						this.$node.addClass("finished")
@@ -49,16 +50,14 @@ function(def, Data, Templates){
 				}
 				else{
 					this.select("time").text(this.task.time)
-					this.trigger("update_button")
-				}
-			})
-
-			this.on("update_button", function(){
-				if(Data.active() == this.task){
-					this.select("control").html(Templates.pause)
-				}
-				else{
-					this.select("control").html(Templates.play)
+					if(Data.active() == this.task){
+						this.$node.addClass("active")
+						this.select("control").html(Templates.pause)
+					}
+					else{
+						this.$node.removeClass("active")
+						this.select("control").html(Templates.play)
+					}
 				}
 			})
 

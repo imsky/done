@@ -26,11 +26,13 @@ a:hover {text-decoration:underline;}
 #addtask .taskbutton span {color:#325675;text-align:center;display:block;line-height:50px;font-weight:bold;}
 
 #tasks {margin-top:50px;}
+#tasks.running .task {opacity:0.5;}
+#tasks.running .task.active {opacity:1;}
 .task {font-size:20px;height:50px;line-height:50px;margin-bottom:25px}
 .task .taskname {cursor:move}
 #tasks .taskname {width:60%}
 #tasks .tasktime {width:20%;text-align:center;}
-#tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0;border:solid 1px #fff;color:#fff;}
+#tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0;color:#fff;}
 #tasks .taskbutton {width:9%;}
 .iconic.play {text-indent:4px;}
 #tasks .deletebutton {margin-left:2%}
