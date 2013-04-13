@@ -1,4 +1,4 @@
-define([], function () {
+define(['lib/crc32'], function (crc32) {
 	var tasks = [];
 	var active = null;
 	return {
@@ -13,8 +13,20 @@ define([], function () {
 			tasks = obj.tasks
 			active = this.get(obj.active)
 		},
+		freeze: function(){
+			return {tasks: tasks, active: (active ? active.id : null)}
+		},
+		encode: function(username, password){
+			return {
+				key: "done-" + username+"-"+crc32(password),
+				value: GibberishAES.enc(JSON.stringify(this.freeze()), password)
+			}
+		},
+		decode: function(object, password){
+			return JSON.parse(GibberishAES.dec(object, password))
+		},
 		persist: function(){
-			amplify.store("donejs", {tasks: tasks, active: (active ? active.id : null)})
+			amplify.store("donejs", this.freeze())
 		},
 		push: function (task) {
 			var id = (new Date()).getTime()
@@ -52,16 +64,6 @@ define([], function () {
 		setActive: function(task){
 			active = task
 			this.persist()
-		},
-		setFirstActive: function(excluded){
-			var task = null;
-			for(i=0;i<tasks.length;i++){
-				if(tasks[i] != excluded && tasks[i].minutes > 0){
-					task = tasks[i];
-					break;
-				}
-			}
-			this.setActive(task)
 		},
 		active: function(){
 			return active;

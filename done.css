@@ -4,11 +4,11 @@ html {font-family:Montserrat;background:#325675 url(sky7o.jpg) no-repeat center 
 body {padding-bottom:50px}
 #container {position:relative;padding-top:50px;}
 
-h1 {width:600px;font-weight:normal;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
+h1 {font-weight:normal;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
 a {color:#fff;text-decoration:none;}
 a:hover {text-decoration:underline;}
 
-#page {width:600px;margin:0 auto;}
+.inner {width:600px;margin:0 auto;}
 .row {overflow:hidden;}
 .row .el {border-radius:50px;overflow: hidden}
 .row .el_b, .row .el {float:left;box-sizing:border-box;height:50px;}
@@ -62,7 +62,7 @@ body.settings #settings {height:75px;padding-top:25px;}
 #error {line-height:25px;height:0px;}
 #error.visible {height:auto;}
 
-h1, #page {width:280px;}
+.inner {width:280px;}
 #addtask .taskname {width:100%;margin-bottom:5%}
 #addtask .tasktime {width:30%;margin-left:0;}
 .row .timebutton {width:10%;}

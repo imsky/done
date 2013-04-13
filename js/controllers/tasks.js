@@ -82,11 +82,30 @@ function(def, Data, Templates, TaskController){
 				this.trigger("favicon:update")
 			})
 
-			this.on(document, "tasks:reorder", function(){
-				var order = Object.getOwnPropertyNames(this.els).map(function(id){
-					return $(that.els[id]).index()
-				})
+			this.on("tasks:reorder", function(){
+
+				var tasks = Data.tasks();
+				var index = {}
+				var order = []
+				var elements = this.$node.find(".task")
+
+				for(i = 0, l = tasks.length; i < l; i++){
+					index[tasks[i]["id"]] = i;
+				}
+
+				for(i = 0, l = tasks.length; i < l; i++){
+					order.push(index[elements.eq(i).data("task")])
+				}
+
 				Data.reorder(order)
+			})
+
+			this.$node.sortable({
+				items: ".task.row",
+				handle: ".taskname",
+				stop: function(){
+					that.trigger("tasks:reorder")
+				}
 			})
 		})
 	}
