@@ -12,6 +12,8 @@ function(def, Data, Templates, TaskController){
 
 			var empty = true;
 
+			var that = this;
+
 			this.on("emptycheck", function(force){
 				if((Data.count() == 0 && !empty)||force==true) {
 					this.$node.empty()
@@ -78,6 +80,13 @@ function(def, Data, Templates, TaskController){
 					this.$node.removeClass("running")
 				}
 				this.trigger("favicon:update")
+			})
+
+			this.on(document, "tasks:reorder", function(){
+				var order = Object.getOwnPropertyNames(this.els).map(function(id){
+					return $(that.els[id]).index()
+				})
+				Data.reorder(order)
 			})
 		})
 	}

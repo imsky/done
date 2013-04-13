@@ -9,25 +9,12 @@ Sound effect by Alastair Cameron: https://soundcloud.com/freefilmandgamemusic
 <html lang="en-US" dir="ltr">
 <head>
 <meta charset="utf-8">
-<script type="text/javascript">
-(function(){
-var dpr = window.devicePixelRatio || 1;
-if(dpr>1){
-	var m = document.createElement("meta")
-	m.setAttribute("name", "viewport")
-	m.setAttribute("content", 'width=device-width,height=device-height,initial-scale='+(1/dpr))
-	document.head.appendChild(m)
-}
-})()
-</script>
+<script type="text/javascript" src="js/viewport.js"></script>
 <title>done - get it done</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="normalize.css">
 <link rel="stylesheet" href="iconic fill/iconic_fill.css">
 <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<style type="text/css">
-html {font-family:Montserrat;background:#325675 url(sky7o.jpg) no-repeat center center fixed;background-size:cover;color:#fff;}
-</style>
 <link rel="stylesheet" href="done.css" class="cssfx">
 <script src="http://imsky.github.io/cssFx/cssfx.min.js"></script>
 </head>
@@ -65,6 +52,8 @@ html {font-family:Montserrat;background:#325675 url(sky7o.jpg) no-repeat center 
 </div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/lib/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="js/lib/jquery.ui.touch-punch.min.js"></script>
 <script src="js/lib/es5-shim.min.js"></script>
 <script src="js/lib/es5-sham.min.js"></script>
 <script data-main="js/done.js" src="js/lib/require.js"></script>

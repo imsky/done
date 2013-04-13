@@ -54,7 +54,7 @@ define([
 			this.on("favicon:update", function(){
 				var active = Data.active();
 				if(active && active._minutes && active.minutes){
-					var progress = 100 * (1 - (active.minutes/active._minutes).toFixed(2))
+					var progress = Math.floor(100 * (1 - (active.minutes/active._minutes)))
 					Piecon.setProgress(progress)
 				}
 				else{

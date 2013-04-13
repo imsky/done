@@ -41,6 +41,14 @@ define([], function () {
 			this.clear()
 			this.persist()
 		},
+		reorder: function(order){
+			var t = []
+			order.forEach(function(index){
+				t.push(tasks[index])
+			})
+			tasks = t;
+			this.persist()
+		},
 		setActive: function(task){
 			active = task
 			this.persist()

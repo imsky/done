@@ -1,5 +1,7 @@
 ::-webkit-input-placeholder {color:rgba(255,255,255,0.75)}
 
+html {font-family:Montserrat;background:#325675 url(sky7o.jpg) no-repeat center center fixed;background-size:cover;color:#fff;}
+body {padding-bottom:50px}
 #container {position:relative;padding-top:50px;}
 
 h1 {width:600px;font-weight:normal;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
@@ -71,5 +73,5 @@ h1, #page {width:280px;}
 #tasks .taskname {width:auto;clear:both;float:none;}
 #tasks .tasktime {width:50%;text-align:left;}
 #tasks .controlbutton, #tasks .deletebutton {margin-left:0;width:25%;}
-#tasks .task.finished .deletebutton {width:50%;}
+#tasks .task.finished .deletebutton {width:50%;margin-left:0;}
 }

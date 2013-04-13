@@ -24,4 +24,13 @@ require([
 		background: "#ffffff",
 		shadow: "#3B5F7F"
 	})
+
+	$("#tasks").sortable({
+		items: ".task.row",
+		handle: ".taskname",
+		stop: function(){
+			$(document).trigger("tasks:reorder")
+		}
+	})
+
 })
