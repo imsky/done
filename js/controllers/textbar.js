@@ -5,9 +5,9 @@ function(def){
 	function component(){
 		this.after("initialize", function(){
 			var timer = null;
-			this.on(document, "error", function(evt, error){
+			this.on(document, this.attr["event"], function(evt, payload){
 				var node = this.$node;
-				this.$node.text(error.text).addClass("visible")
+				this.$node.text(payload.text).addClass("visible")
 				if(timer != null){
 					clearTimeout(timer)
 				}

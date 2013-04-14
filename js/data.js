@@ -1,7 +1,14 @@
 define(['lib/crc32'], function (crc32) {
 	var tasks = [];
 	var active = null;
+	var credentials = null;
 	return {
+		credentials: function(obj){
+			if(obj){
+				credentials = obj;
+			}
+			return credentials;
+		},
 		load: function(){
 			this.clear()
 			var local = amplify.store("donejs")
@@ -12,13 +19,17 @@ define(['lib/crc32'], function (crc32) {
 		recover: function(obj){
 			tasks = obj.tasks
 			active = this.get(obj.active)
+			this.persist()
 		},
 		freeze: function(){
 			return {tasks: tasks, active: (active ? active.id : null)}
 		},
+		getKey: function(username, password){
+			return "done-" + username+"-"+crc32(password)
+		},
 		encode: function(username, password){
 			return {
-				key: "done-" + username+"-"+crc32(password),
+				key: this.getKey(username,password),
 				value: GibberishAES.enc(JSON.stringify(this.freeze()), password)
 			}
 		},
@@ -48,6 +59,7 @@ define(['lib/crc32'], function (crc32) {
 		},
 		clear: function () {
 			tasks = []
+			active = null
 		},
 		deleteAllTasks: function(){
 			this.clear()

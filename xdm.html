@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+parent.xdmSet = function(key,value){
+	$("form").empty();
+	$("form").append($("<input />").attr({"name":key, "value": value}))
+	$("form").get(0).submit()
+}
+</script>
+<form method="post" action="http://api.openkeyval.org/"></form>
+</body>
+</html>

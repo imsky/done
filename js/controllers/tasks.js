@@ -38,7 +38,6 @@ function(def, Data, Templates, TaskController){
 			})
 
 			this.on(document, "tasks:import", function(){
-				Data.load()
 				if(Data.count() > 0){
 					var tasks = Data.tasks()
 					for(i = 0; i < tasks.length; i++){

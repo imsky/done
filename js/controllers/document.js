@@ -29,7 +29,7 @@ define([
 
 			this.on("click", {
 				'settings-button': function (e) {
-					$("body").toggleClass("settings")
+					$("body").toggleClass("settings").removeClass("credentials")
 					e.preventDefault();
 				}
 			})
@@ -85,6 +85,31 @@ define([
 					count--;
 				}, 1000)
 			})
+
+			this.on("tasks:open", function(){
+				this.trigger("credentials:check", {action: "open", callback: function(){}})
+			})
+
+			this.on("tasks:save", function(){
+				this.trigger("credentials:check", {action: "save", callback: function(){}})
+			})
+
+			this.on("credentials:check", function(evt, object){
+				var callback = object.callback;
+				var action = object.action;
+				$("body").removeClass("settings")
+				if(!Data.credentials()){
+					this.trigger("credentials:setup", {action: action, callback: function(){
+						this.trigger("credentials:check", callback)
+					}})
+				}
+				else{
+					this.trigger("credentials:hide")
+					this.trigger("credentials:"+action, Data.credentials())
+				}
+			})
+
+			Data.load()
 
 			this.trigger("tasks:import")
 

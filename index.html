@@ -19,10 +19,28 @@ Sound effect by Alastair Cameron: https://soundcloud.com/freefilmandgamemusic
 <script src="http://imsky.github.io/cssFx/cssfx.min.js"></script>
 </head>
 <body>
-<div id="error">Error here</div>
+<div id="error" class="textbar">Error here</div>
+<div id="notification" class="textbar">Notification here</div>
+<div id="credentials">
+	<div class="inner">
+		<div class="row">
+			<div class="col username field">
+				<input placeholder="username" id="username">
+			</div>
+			<div class="col password field">
+				<input type="password" placeholder="password" id="password">
+			</div>
+			<div class="col button loginbutton">
+				login
+			</div>
+		</div>
+	</div>
+</div>
 <div id="settings">
 	<div class="inner">
-		<div class="settings-button" id="clearbutton">clear tasks</div>
+		<div class="row">
+			<div class="button" id="openbutton">open</div><div class="button" id="savebutton">save</div><div class="button" id="clearbutton">clear</div>
+		</div>
 	</div>
 </div>
 <div id="container">
@@ -30,16 +48,16 @@ Sound effect by Alastair Cameron: https://soundcloud.com/freefilmandgamemusic
 <div id="page" class="inner">
 	<h1>done</h1>
 	<div class="row" id="addtask">
-		<div class="el taskname">
+		<div class="col taskname">
 			<input id="taskname" maxlength="30" tabindex="1" placeholder="get it done">
 		</div>
-		<div class="el tasktime">
+		<div class="col tasktime">
 			<span id="tasktime">&#188;h</span>
 		</div>
-		<div class="el button timebutton icon">
+		<div class="col button timebutton">
 			<span class="iconic plus"></span>
 		</div>
-		<div class="el button taskbutton">
+		<div class="col button taskbutton">
 			<span>add</span>
 		</div>
 	</div>
@@ -53,11 +71,14 @@ Sound effect by Alastair Cameron: https://soundcloud.com/freefilmandgamemusic
 	</div>
 </div>
 </div>
+<script src="http://cdn.openkeyval.org/statics/openkeyval.packed.js"></script>
+<script>OpenKeyval.shouldMemoize = false</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/lib/jquery-ui-1.10.2.custom.min.js"></script>
 <script src="js/lib/jquery.ui.touch-punch.min.js"></script>
 <script src="js/lib/es5-shim.min.js"></script>
 <script src="js/lib/es5-sham.min.js"></script>
 <script data-main="js/done.js" src="js/lib/require.js"></script>
+<iframe src="xdm.html" id="xdm"></iframe>
 </body>
 </html>
