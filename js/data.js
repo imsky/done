@@ -51,7 +51,9 @@ define(['lib/md5.min','lib/gibberish-aes.min'], function (md5, Gibberish) {
 			return !isNaN(task.minutes) && task.minutes >= 0 && task.title && task.title.length > 0
 		},
 		deleteTask: function(task){
-			this.setActive(null)
+			if(active == task){
+				this.setActive(null)
+			}
 			tasks = tasks.filter(function(t){
 				return t !== task
 			})

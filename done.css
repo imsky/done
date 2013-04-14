@@ -83,9 +83,16 @@ body.big .tasktime {line-height:50px}
 body.big .taskbutton {display:none;}
 body.big .tasktime {float:none;width:auto !important;text-align:center;margin-top:20px;}
 body.big h1 {position:absolute;top:10px;right:10px;font-size:20px;line-height:20px;}
+body.big #bigbutton {background:#eee;color:#325675;}
 
 @media only screen and (max-width: 320px) {
 @-ms-viewport { width: device-width; }
+
+body.settings #settings {height:auto;padding:0;}
+#settings .button {display:block;margin:10% auto;width:75%;padding:0;}
+
+body.credentials #credentials {height:auto;padding:0;}
+#credentials .col {float:none;margin:10% auto;width:75%;}
 
 .textbar {line-height:25px;height:0px;}
 .textbar.visible {height:auto;}
@@ -93,13 +100,15 @@ body.big h1 {position:absolute;top:10px;right:10px;font-size:20px;line-height:20
 .inner {width:280px;}
 #addtask .taskname {width:100%;margin-bottom:5%}
 #addtask .tasktime {width:30%;margin-left:0;}
-.row .timebutton {width:10%;}
+#addtask .timebutton {width:10%;}
 #addtask.row .taskbutton {width:55%;margin-left:5%;}
 
 #tasks .task {height:auto;}
 #tasks .taskname {height:auto;line-height:25px;}
+body.big #tasks .taskname {line-height:1;}
 #tasks .taskname {width:auto;clear:both;float:none;}
 #tasks .tasktime {width:50%;text-align:left;}
+body.big #tasks .tasktime {text-align:center;width:auto !important;float:none;}
 #tasks .controlbutton, #tasks .deletebutton {margin-left:0;width:25%;}
 #tasks .task.finished .deletebutton {width:50%;margin-left:0;}
 }
