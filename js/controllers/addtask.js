@@ -72,8 +72,6 @@ function(def){
 			})
 
 			this.trigger("renderTime")
-
-			this.select('task-name').get(0).focus();
 		})
 	}
 	return def(component)
