@@ -1,4 +1,4 @@
-define(['lib/crc32'], function (crc32) {
+define(['lib/md5.min','lib/gibberish-aes.min'], function (md5, Gibberish) {
 	var tasks = [];
 	var active = null;
 	var credentials = null;
@@ -25,7 +25,7 @@ define(['lib/crc32'], function (crc32) {
 			return {tasks: tasks, active: (active ? active.id : null)}
 		},
 		getKey: function(username, password){
-			return "done-" + username+"-"+crc32(password)
+			return "done-" + md5(username+"-"+password)
 		},
 		encode: function(username, password){
 			return {

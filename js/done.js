@@ -3,7 +3,6 @@ require([
 		'lib/piecon.min',
 		'lib/amplify.store',
 		'lib/howler.min',
-		'lib/gibberish-aes.min',
 		'templates',
 		'data',
 		'controllers/document',
@@ -13,7 +12,7 @@ require([
 		'controllers/tasks',
 		'controllers/settings',
 		'controllers/credentials'
-], function (Flight, _Piecon, Store, Howler, GibberishAES, Templates, Data, DocumentController, AddTaskController, TextbarController, TaskController, TasksController, SettingsController, CredentialsController) {
+], function (Flight, _Piecon, Store, Howler, Templates, Data, DocumentController, AddTaskController, TextbarController, TaskController, TasksController, SettingsController, CredentialsController) {
 	AddTaskController.attachTo("#addtask")
 	TextbarController.attachTo("#error", {event: "error"})
 	TextbarController.attachTo("#notification", {event: "notification"})
