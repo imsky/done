@@ -69,6 +69,21 @@ body.credentials #credentials {height:50px;padding:25px 0px}
 
 #xdm {display:none;}
 
+body.big #addtask {display:none;}
+body.big #tasks.running .task {display:none;}
+body.big #tasks.running .task.active {display:block;}
+body.big #footer {display:none;}
+body.big #container .inner {width:auto;margin:10%;}
+body.big #tasks .task .taskname {cursor:default;width:auto;float:none;text-align:center;font-size:2em;}
+body.big #tasks .task.active .taskname {font-size:3em;}
+
+body.big #tasks .row .col {height:auto;}
+body.big #tasks .task {height:auto;line-height:inherit;margin-bottom:30px;}
+body.big .tasktime {line-height:50px}
+body.big .taskbutton {display:none;}
+body.big .tasktime {float:none;width:auto !important;text-align:center;margin-top:20px;}
+body.big h1 {position:absolute;top:10px;right:10px;font-size:20px;line-height:20px;}
+
 @media only screen and (max-width: 320px) {
 @-ms-viewport { width: device-width; }
 

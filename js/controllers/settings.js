@@ -6,7 +6,8 @@ function(def){
 		this.defaultAttrs({
 				'clear': '#clearbutton',
 				'open': '#openbutton',
-				'save': '#savebutton'
+				'save': '#savebutton',
+				'big': '#bigbutton'
 			})
 		this.after("initialize", function(){
 			this.on("click", {
@@ -18,6 +19,9 @@ function(def){
 				},
 				"save": function(){
 					this.trigger("tasks:save")
+				},
+				"big": function(){
+					this.trigger("tasks:big")
 				}
 			})
 		})

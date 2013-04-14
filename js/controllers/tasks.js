@@ -106,6 +106,16 @@ function(def, Data, Templates, TaskController){
 					that.trigger("tasks:reorder")
 				}
 			})
+
+			this.on(document, "tasks:big", function(){
+				$("body").toggleClass("big")
+				if($("body").hasClass("big")){
+					this.$node.sortable("disable")
+				}
+				else{
+					this.$node.sortable("enable")
+				}
+			})
 		})
 	}
 	return def(component)

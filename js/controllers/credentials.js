@@ -17,15 +17,16 @@ define([
 			var ret = null;
 			window.remoteStorage.getItem(key, function (storedValue) {
 				if(storedValue == null){
-						callback.call(this)
-						return;
+						callback.call(this, storedValue)
 				}
-				var value = GibberishAES.dec(storedValue, password);
-				try {
-					var json = JSON.parse(value);
-					callback.call(this, json)
-				} catch (e) {
-					ecallback.call(this)
+				else{
+					var value = GibberishAES.dec(storedValue, password);
+					try {
+						var json = JSON.parse(value);
+						callback.call(this, json)
+					} catch (e) {
+						ecallback.call(this)
+					}
 				}
 			})
 		}
@@ -50,12 +51,12 @@ define([
 			this.on(document, "credentials:save", function (evt, credentials) {
 				var username = credentials.username,
 					password = credentials.password;
-				verifyCredentials(username, password, function () {
+				verifyCredentials(username, password, function (json) {
 					var payload = Data.encode(username, password);
 					window.xdmSet(payload.key, payload.value)
 					$("#xdm").one("load", function () {
 						window.remoteStorage.getItem(payload.key, function(storedValue){
-							if(storedValue.substr(0,64) == payload.value.substr(0,64)){
+							if(storedValue != null && storedValue.substr(0,64) == payload.value.substr(0,64)){
 								that.trigger("notification", {
 									text: "Your tasks have been saved"
 								})
@@ -66,7 +67,6 @@ define([
 								that.trigger("error", {text: "Error saving tasks"})
 							}
 						})
-						
 						$("#xdm").remove();
 						$("body").append(originalXDM.clone())
 					})
@@ -81,17 +81,23 @@ define([
 				var username = credentials.username,
 					password = credentials.password;
 				verifyCredentials(username, password, function (json) {
-					that.trigger("tasks:clear")
-					Data.recover(json)
-					that.trigger("tasks:import")
-					that.trigger("notification", {
-						text: "Your tasks have been loaded"
-					})
-					Data.credentials(credentials)
-					that.trigger("credentials:hide")
+					if(json != null){
+						that.trigger("tasks:clear")
+						Data.recover(json)
+						that.trigger("tasks:import")
+						that.trigger("notification", {
+							text: "Your tasks have been loaded"
+						})
+						Data.credentials(credentials)
+						that.trigger("credentials:hide")
+					}
+					else{
+						that.trigger("error", {text:"Error loading tasks"})
+					}
+					
 				}, function () {
 					that.trigger("error", {
-						text: "Couldn't load tasks"
+						text: "Incorrect login"
 					})
 				})
 			})
