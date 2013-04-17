@@ -1,4 +1,4 @@
-define(['lib/md5.min','lib/gibberish-aes.min'], function (md5, Gibberish) {
+define(['lib/md5.min','lib/gibberish-aes.min', 'lib/base64.min'], function (md5, Gibberish, Base64) {
 	var tasks = [];
 	var active = null;
 	var credentials = null;
@@ -25,7 +25,7 @@ define(['lib/md5.min','lib/gibberish-aes.min'], function (md5, Gibberish) {
 			return {tasks: tasks, active: (active ? active.id : null)}
 		},
 		getKey: function(username, password){
-			return "done-" + md5(username+"-"+password)
+			return "done-" + Base64.toBase64(md5([username, password, username, password].join("/"))).replace(/[\W]+/g,'')
 		},
 		encode: function(username, password){
 			return {

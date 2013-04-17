@@ -49,6 +49,10 @@ define([
 				Data.setActive(null)
 				this.trigger("tasks:update")
 				this.trigger("notification:complete")
+
+				if(Data.credentials()){
+					this.trigger("tasks:save")
+				}
 			})
 
 			this.on("favicon:update", function(){
