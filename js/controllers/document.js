@@ -49,8 +49,13 @@ define([
 				Data.setActive(null)
 				this.trigger("tasks:update")
 				this.trigger("notification:complete")
-
 				if(Data.credentials()){
+					this.trigger("tasks:save")
+				}
+			})
+
+			this.on("tasks:update", function(evt, task){
+				if(Data.active() && Data.credentials()){
 					this.trigger("tasks:save")
 				}
 			})
