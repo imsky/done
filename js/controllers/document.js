@@ -13,7 +13,7 @@ define([
 
 			var that = this;
 			var notificationTimer = null, minuteTimer = null;
-			var originalTitle = $("title").text()
+			var originalTitle = document.title
 
 			function startTimer(){
 				stopTimer();
