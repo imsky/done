@@ -1,11 +1,11 @@
 ::-webkit-input-placeholder {color:rgba(255,255,255,0.75)}
 
-html {font-family:Montserrat;background:#325675 url(sky7o.jpg) no-repeat center center fixed;background-size:cover;color:#fff;}
+html {font-family:Montserrat;background:#fff;color:#325675;}
 body {padding-bottom:50px}
 #container {position:relative;padding-top:50px;}
 
 h1 {font-weight:normal;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
-a {color:#fff;text-decoration:none;}
+a {color:#325675;text-decoration:none;}
 a:hover {text-decoration:underline;}
 
 .inner {width:600px;margin:0 auto;}
@@ -14,16 +14,16 @@ a:hover {text-decoration:underline;}
 .row .col input {height:40px;border:0;background:0;box-sizing:border-box;font-size:20px;}
 
 #addtask {font-size:20px;line-height:40px;}
-#addtask .taskname, #addtask .tasktime {width:60%;border:solid 5px #fff}
+#addtask .taskname, #addtask .tasktime {width:60%;border:solid 5px #325675}
 #addtask .tasktime {width:10%;margin-left:2.5%;}
 #addtask .col {border-radius:50px}
-#addtask .col input {color:#fff}
-#addtask .col.button {color:#325675;background:#fff;user-select:none;}
+#addtask .col input {color:#325675}
+#addtask .col.button {color:#fff;background:#325675;user-select:none;}
 #addtask .tasktime {border-top-right-radius:0px;border-bottom-right-radius:0px}
 #addtask .timebutton {width:5%;border-top-left-radius:0px;border-bottom-left-radius:0px;line-height:55px}
 #addtask .timebutton span {display:block;text-indent:2px;}
 #addtask .taskbutton {width:20%;margin-left:2.5%;}
-#addtask .taskbutton span {color:#325675;text-align:center;display:block;line-height:50px;font-weight:bold;}
+#addtask .taskbutton span {text-align:center;display:block;line-height:50px;font-weight:bold;}
 
 #taskname {width:96%;padding-left:4%;}
 #tasktime {text-align:center;width:100%;display:block;text-indent:1px;user-select:none;}
@@ -35,7 +35,7 @@ a:hover {text-decoration:underline;}
 .task .taskname {cursor:move}
 #tasks .taskname {width:60%}
 #tasks .tasktime {width:20%;text-align:center;}
-#tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0;color:#fff;}
+#tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0}
 #tasks .taskbutton {width:9%;}
 .iconic.play {text-indent:4px;}
 #tasks .deletebutton {margin-left:2%}
@@ -48,24 +48,24 @@ a:hover {text-decoration:underline;}
 #settings-button {position:absolute;top:8px;left:10px;font-size:30px;line-height:1;cursor:pointer;transition:top 1s ease-in-out;}
 
 body.settings #settings {height:50px;padding:25px 0px}
-#settings {background:#fff;height:0px;text-align:center;overflow:hidden;transition:all 0.6s ease-in-out;padding:0px}
-#settings .button {font-size:20px;background:#325675;color:#fff;text-align:center;border-radius:50px;height:50px;padding:0px 20px;display:inline-block;cursor:pointer;line-height:50px;margin:0 5px;}
+#settings {background:#325675;height:0px;text-align:center;overflow:hidden;transition:all 0.6s ease-in-out;padding:0px}
+#settings .button {font-size:20px;background:#fff;color:#325675;text-align:center;border-radius:50px;height:50px;padding:0px 20px;display:inline-block;cursor:pointer;line-height:50px;margin:0 5px;}
 
-#footer {margin-top:50px;font-size:15px;padding-top:10px;border-top:solid 1px #fff;text-align:center;}
+#footer {margin-top:50px;font-size:15px;padding-top:10px;border-top:solid 1px #325675;text-align:center;}
 #footer span {display:block;margin-bottom:10px;}
 
 .textbar {height:0px;text-align:center;line-height:50px;overflow:hidden;transition:all 0.5s ease-out;}
 .textbar.visible {height:50px;}
 
-#error {background:#FF5500;}
-#notification {background:#fff;color:#999;}
+#error {background:#FF5500;color:#fff;}
+#notification {background:#eee;color:#777;}
 
 body.credentials #credentials {height:50px;padding:25px 0px}
-#credentials {background:#fff;height:0px;padding:0px;overflow:hidden;transition:all 0.6s ease-in-out}
+#credentials {background:#325675;height:0px;padding:0px;overflow:hidden;transition:all 0.6s ease-in-out}
 #credentials .col {border-radius:50px;}
-#credentials .username, #credentials .password {width:35%;margin-right:2.5%;border:solid 5px #325675;}
-#credentials .field input {padding-left:4%;width:96%;color:#325675;}
-#credentials .loginbutton {width:25%;background:#325675;font-size:20px;line-height:50px;text-align:center}
+#credentials .username, #credentials .password {width:35%;margin-right:2.5%;border:solid 5px #fff;}
+#credentials .field input {padding-left:4%;width:96%;color:#fff;}
+#credentials .loginbutton {width:25%;background:#fff;font-size:20px;line-height:50px;text-align:center}
 
 #xdm {display:none;}
 
