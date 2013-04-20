@@ -56,7 +56,10 @@ define([
 
 			this.on("tasks:update", function(evt, task){
 				if(Data.active() && Data.credentials()){
-					this.trigger("tasks:save")
+					var active = Data.active()
+					if(active.minutes > 1){
+						this.trigger("tasks:save")
+					}
 				}
 			})
 
