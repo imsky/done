@@ -113,7 +113,7 @@ define(['lib/md5.min','lib/gibberish-aes.min', 'lib/base64.min'], function (md5,
 					if(hours == 0){
 						task.time = minutes + "m"
 					}
-					else if(hours > 0 && minutes > 0 && hours <= 6){
+					else if(hours > 0 && minutes > 0){
 						task.time += " " + minutes + "m"
 					}
 				}
