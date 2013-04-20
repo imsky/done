@@ -8,6 +8,8 @@ Your task list is saved automatically in your browser, so it's always there when
 
 ##How to use
 
+![done in browser](http://donegtd.com/screenshot_iphone.jpg)
+
 ###Adding a task
 Enter the task name, then click the time button to set the task time, and click **add**.
 
@@ -18,8 +20,6 @@ You can drag and drop tasks to order them as you like. Put the important stuff f
 There is no registration for **done**, so you can save and load tasks to any username/password combination you choose. Your tasks are encrypted using AES, so they're always safe.
 
 ##Details
-
-![done in browser](http://donegtd.com/screenshot_iphone.jpg)
 
 **done** is built using [Twitter Flight](https://github.com/twitter/flight), localStorage, and the [OpenKeyVal](http://openkeyval.org/) persistence service. There is no backend, everything is served out of Github Pages.
 
