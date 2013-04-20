@@ -6,6 +6,17 @@
 
 Your task list is saved automatically in your browser, so it's always there when you need it. You can also save it to the cloud with any username and password.
 
+##How to use
+
+###Adding a task
+Enter the task name, then click the time button to set the task time, and click **add**.
+
+###Organizing tasks
+You can drag and drop tasks to order them as you like. Put the important stuff first, or mix your schedule up, it's your call.
+
+###Saving and loading tasks
+There is no registration for **done**, so you can save and load tasks to any username/password combination you choose. Your tasks are encrypted using AES, so they're always safe.
+
 ##Details
 
 ![done in browser](http://donegtd.com/screenshot_iphone.jpg)
