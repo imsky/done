@@ -1,7 +1,7 @@
 ::-webkit-input-placeholder {color:rgba(255,255,255,0.75)}
 
 html {font-family:Montserrat;background:#fff;color:#325675;}
-body {padding-bottom:50px}
+body {padding-bottom:50px;min-width:300px;}
 #container {position:relative;padding-top:50px;}
 
 h1 {font-weight:normal;display:block;text-align:center;letter-spacing:-2px;font-size:50px;margin:0 auto;margin-bottom:50px;}
@@ -43,7 +43,7 @@ a:hover {text-decoration:underline;}
 #tasks .task.finished .controlbutton {display:none;}
 #tasks .task.finished .deletebutton {width:10%;margin-left:5%;}
 
-.tasktime, .button {cursor:pointer;user-select:none;}
+#addtask .tasktime, .button {cursor:pointer;user-select:none;}
 
 #settings-button {position:absolute;top:8px;left:10px;font-size:30px;line-height:1;cursor:pointer;transition:top 1s ease-in-out;}
 
@@ -85,29 +85,32 @@ body.big .tasktime {float:none;width:auto !important;text-align:center;margin-to
 body.big h1 {position:absolute;top:10px;right:10px;font-size:20px;line-height:20px;}
 body.big #bigbutton {background:#eee;color:#325675;}
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 600px) {
 @-ms-viewport { width: device-width; }
 
 body.settings #settings {height:auto;padding:0;}
-#settings .button {display:block;margin:10% auto;width:75%;padding:0;}
+#settings .button {display:block !important;margin:20px auto;width:50%;padding:0;float:none;clear;both}
 
 body.credentials #credentials {height:auto;padding:0;}
-#credentials .col {float:none;margin:10% auto;width:75%;}
+#credentials .col {float:none;margin:20px auto;width:50%;}
 
 .textbar {line-height:25px;height:0px;}
 .textbar.visible {height:auto;}
 
-.inner {width:280px;}
-#addtask .taskname {width:100%;margin-bottom:5%}
+.inner {width:auto}
+#container {margin:10px;}
+#addtask .taskname {width:100%;margin-bottom:20px}
 #addtask .tasktime {width:30%;margin-left:0;}
 #addtask .timebutton {width:10%;}
 #addtask.row .taskbutton {width:55%;margin-left:5%;}
 
-#tasks .task {height:auto;}
-#tasks .taskname {height:auto;line-height:25px;}
+#tasks .task {height:auto;margin-bottom:50px;}
+#tasks .taskname {height:auto;line-height:25px;text-align:center;clear:both;width:100%;}
+#tasks .controls .col {float:left;text-align:center}
+#tasks .tasktime {width:50%;}
+#tasks .taskbutton {width:25%;}
+#tasks .controls {overflow:hidden;width:60%;margin:0 auto;}
 body.big #tasks .taskname {line-height:1;}
-#tasks .taskname {width:auto;clear:both;float:none;}
-#tasks .tasktime {width:50%;text-align:left;}
 body.big #tasks .tasktime {text-align:center;width:auto !important;float:none;}
 #tasks .controlbutton, #tasks .deletebutton {margin-left:0;width:25%;}
 #tasks .task.finished .deletebutton {width:50%;margin-left:0;}
