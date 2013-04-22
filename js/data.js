@@ -102,22 +102,25 @@ define(['lib/md5.min','lib/gibberish-aes.min', 'lib/base64.min'], function (md5,
 			this.updateTimes()
 			this.persist()
 		},
+		minutesToText: function(m){
+			var hours = Math.floor(m / 60)
+			var minutes = Math.floor(m % 60)
+			var time = null;
+			if(minutes > 0){
+				time = hours + "h"
+				if(hours == 0 || minutes){
+					time = minutes + "m"
+				}
+				else if(hours > 0 && minutes > 0){
+					time += " " + minutes + "m"
+				}
+			}
+			return time;
+		},
 		updateTimes: function () {
 			tasks.forEach(function(task){
-				var hours = Math.floor(task.minutes / 60)
-				var minutes = Math.floor((task.minutes % 60))
-				if(task.minutes > 0){
-
-					task.time = hours + "h"
-
-					if(hours == 0){
-						task.time = minutes + "m"
-					}
-					else if(hours > 0 && minutes > 0){
-						task.time += " " + minutes + "m"
-					}
-				}
-			})
+				task.time = this.minutesToText(task.minutes)
+			}, this)
 		}
 	}
 })

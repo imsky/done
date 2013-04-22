@@ -7,19 +7,11 @@ function(def){
 
 		function render_time(minutes){
 			var hours = Math.floor(minutes/60);
-			if(hours > 0){
+			if((hours == 1 && minutes % 60 == 0) || hours > 1){
 				return hours + "h"
 			}
-			else{
-				if(minutes <= 15){
-					return "&#188;h"
-				}
-				else if(minutes <= 30){
-					return "&#189;h"
-				}
-				else if(minutes < 60){
-					return "&#190;h"
-				}
+			else if(minutes < 120){
+				return minutes+"m"
 			}
 		}
 
@@ -51,6 +43,9 @@ function(def){
 					}
 					else if(minutes < 60){
 						minutes += 15;
+					}
+					else if(minutes < 120){
+						minutes += 30;
 					}
 					else{
 						minutes += 60;

@@ -11,18 +11,22 @@ a:hover {text-decoration:underline;}
 .row .col {float:left;box-sizing:border-box;height:50px;}
 .row .col input {height:40px;border:0;background:0;box-sizing:border-box;font-size:20px;}
 
+#addtask .taskname, #tasks .taskname {width:57.5%;}
+#addtask .tasktime  {width:12.5%}
+#addtask .taskbutton {width:20%;margin-left:2.5%;}
+#tasks .tasktime {width:22.5%;}
+#tasks .taskbutton {width:9%;}
+
 #addtask {font-size:20px;line-height:40px;}
-#addtask .taskname, #addtask .tasktime {width:60%;border:solid 5px #325675}
-#addtask .tasktime {width:10%;margin-left:2.5%;}
+#addtask .taskname, #addtask .tasktime {border:solid 5px #325675}
+#addtask .tasktime {margin-left:2.5%;}
 #addtask .col {border-radius:50px}
 #addtask .col input {color:#325675}
 #addtask .col.button {color:#fff;background:#325675;user-select:none;}
 #addtask .tasktime {border-top-right-radius:0px;border-bottom-right-radius:0px}
 #addtask .timebutton {width:5%;border-top-left-radius:0px;border-bottom-left-radius:0px;line-height:55px}
 #addtask .timebutton span {display:block;text-indent:2px;}
-#addtask .taskbutton {width:20%;margin-left:2.5%;}
 #addtask .taskbutton span {text-align:center;display:block;line-height:50px;font-weight:bold;}
-
 #taskname {width:96%;padding-left:4%;}
 #tasktime {text-align:center;width:100%;display:block;text-indent:1px;user-select:none;}
 
@@ -31,10 +35,9 @@ a:hover {text-decoration:underline;}
 #tasks.running .task.active {opacity:1;}
 .task {font-size:20px;height:50px;line-height:50px;margin-bottom:25px}
 .task .taskname {cursor:move}
-#tasks .taskname {width:60%}
-#tasks .tasktime {width:20%;text-align:center;}
+#tasks .tasktime {text-align:center;}
 #tasks .taskbutton {text-align:center;line-height:50px;font-size:30px;background:0}
-#tasks .taskbutton {width:9%;}
+
 .iconic.play {text-indent:4px;}
 #tasks .deletebutton {margin-left:2%}
 #tasks .notice {text-align:center;display:block;font-size:30px;margin:100px 0px;}
