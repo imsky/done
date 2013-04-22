@@ -18,6 +18,7 @@ a:hover {text-decoration:underline;}
 #tasks .taskbutton {width:9%;}
 
 #addtask {font-size:20px;line-height:40px;}
+#addtask input::-webkit-input-placeholder {color:rgba(50,86,117,0.5);}
 #addtask .taskname, #addtask .tasktime {border:solid 5px #325675}
 #addtask .tasktime {margin-left:2.5%;}
 #addtask .col {border-radius:50px}
@@ -47,6 +48,8 @@ a:hover {text-decoration:underline;}
 #addtask .tasktime, .button {cursor:pointer;user-select:none;}
 
 #settings-button {position:absolute;top:8px;left:10px;font-size:30px;line-height:1;cursor:pointer;transition:top 1s ease-in-out;}
+
+#settings input::-webkit-input-placeholder , #credentials input::-webkit-input-placeholder {color:rgba(255,255,255,0.5);}
 
 body.settings #settings {height:50px;padding:25px 0px}
 #settings {background:#325675;height:0px;text-align:center;overflow:hidden;transition:all 0.6s ease-in-out;padding:0px}
