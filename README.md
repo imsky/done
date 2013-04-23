@@ -8,7 +8,7 @@ Your task list is saved automatically in your browser, so it's always there when
 
 ##How to use
 
-![done in browser](http://donegtd.com/screenshot_iphone.jpg)
+![done in browser](http://donegtd.com/screenshot_iphone.jpg?0)
 
 ###Adding a task
 Enter the task name, then click the time button to set the task time, and click **add**.
