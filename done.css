@@ -47,7 +47,7 @@ a:hover {text-decoration:underline;}
 
 #addtask .tasktime, .button {cursor:pointer;user-select:none;}
 
-#settings-button {position:absolute;top:8px;left:10px;font-size:30px;line-height:1;cursor:pointer;transition:top 1s ease-in-out;}
+#settings-button {position:absolute;top:0px;left:0px;padding:8px 10px;font-size:30px;line-height:1;cursor:pointer;transition:top 1s ease-in-out;}
 
 #settings input::-webkit-input-placeholder , #credentials input::-webkit-input-placeholder {color:rgba(255,255,255,0.5);}
 
