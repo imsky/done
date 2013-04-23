@@ -132,9 +132,9 @@ body.credentials #credentials {height:auto;padding:0;}
 #tasks .task {height:auto;margin-bottom:50px;}
 #tasks .taskname {height:auto;line-height:25px;text-align:center;clear:both;width:100%;}
 #tasks .controls .col {float:left;text-align:center}
-#tasks .tasktime {width:50%;}
-#tasks .taskbutton {width:25%;}
-#tasks .controls {overflow:hidden;width:60%;margin:0 auto;}
+#tasks .controls .col.tasktime {width:30%;margin-left:5%;margin-right:5%;}
+#tasks .taskbutton {width:30%;}
+#tasks .controls {overflow:hidden;width:200px;margin:0 auto;}
 body.big #tasks .taskname {line-height:1;}
 body.big #tasks .tasktime {text-align:center;width:auto !important;float:none;}
 #tasks .controlbutton, #tasks .deletebutton {margin-left:0;width:25%;}
