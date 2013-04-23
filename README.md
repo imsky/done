@@ -25,7 +25,7 @@ There is no registration for **done**, so you can save and load tasks to any use
 
 ##Windows features
 
-![done in windows](http://donegtd.com/screenshot_snap.jpg)
+![done in windows](http://donegtd.com/screenshot_snap.jpg?0)
 
 **done** supports both Snap mode in Windows 8 and Pinned Sites in IE9+. This way, users can see the task list while they're working, and open **done** instantly from the task bar.
 
