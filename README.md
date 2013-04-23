@@ -2,7 +2,7 @@
 
 ![done in browser](http://donegtd.com/screenshot_browser.jpg)
 
-**done** is a task management app that lets you put a timer on tasks and order tasks as necessary.
+**done** is a task management app that lets you time and order tasks as necessary.
 
 Your task list is saved automatically in your browser, so it's always there when you need it. You can also save it to the cloud with any username and password.
 
