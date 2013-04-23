@@ -106,9 +106,9 @@ define(['lib/md5.min','lib/gibberish-aes.min', 'lib/base64.min'], function (md5,
 			var hours = Math.floor(m / 60)
 			var minutes = Math.floor(m % 60)
 			var time = null;
-			if(minutes > 0){
+			if(m > 0){
 				time = hours + "h"
-				if(hours == 0 || minutes){
+				if(hours == 0){
 					time = minutes + "m"
 				}
 				else if(hours > 0 && minutes > 0){
