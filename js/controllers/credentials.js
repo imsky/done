@@ -25,6 +25,7 @@ define([
 						var json = JSON.parse(value);
 						callback.call(this, json)
 					} catch (e) {
+						if(window.console) console.log(e)
 						ecallback.call(this)
 					}
 				}
