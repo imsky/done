@@ -25,7 +25,7 @@ define([
 						var json = JSON.parse(value);
 						callback.call(this, json)
 					} catch (e) {
-						if(window.console) console.log(e)
+						//if(window.console) console.log(e)
 						ecallback.call(this)
 					}
 				}
@@ -34,7 +34,8 @@ define([
 
 		this.after("initialize", function () {
 
-			var originalXDM = $("#xdm").clone();
+			var originalXDM = $('<iframe src="xdm.html" id="xdm"></iframe>');
+			$("body").prepend(originalXDM.clone())
 
 			var that = this;
 
@@ -52,6 +53,10 @@ define([
 			this.on(document, "credentials:save", function (evt, credentials) {
 				var username = credentials.username,
 					password = credentials.password;
+					if(!window.xdmSet){
+						that.trigger("error", {text: "Unable to save"})
+						return;
+					}
 				verifyCredentials(username, password, function (json) {
 					var payload = Data.encode(username, password);
 					window.xdmSet(payload.key, payload.value)
@@ -69,7 +74,7 @@ define([
 							}
 						})
 						$("#xdm").remove();
-						$("body").append(originalXDM.clone())
+						$("body").prepend(originalXDM.clone())
 					})
 				}, function () {
 					that.trigger("error", {
