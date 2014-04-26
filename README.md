@@ -4,11 +4,9 @@
 
 **done** is a task management app that lets you time and order tasks as necessary.
 
-Your task list is saved automatically in your browser, so it's always there when you need it. You can also save it to the cloud with any username and password.
+Your task list is saved automatically in your browser, so it's always there when you need it.
 
 ##How to use
-
-![done in browser](http://donegtd.com/screenshot_iphone.jpg?0)
 
 ###Adding a task
 Enter the task name, then click the time button to set the task time, and click **add**.
@@ -16,12 +14,9 @@ Enter the task name, then click the time button to set the task time, and click 
 ###Organizing tasks
 You can drag and drop tasks to order them as you like. Put the important stuff first, or mix your schedule up, it's your call.
 
-###Saving and loading tasks
-There is no registration for **done**, so you can save and load tasks to any username/password combination you choose. Your tasks are encrypted using AES, so they're always safe.
-
 ##Details
 
-**done** is built using [Twitter Flight](https://github.com/twitter/flight), localStorage, and the [OpenKeyVal](http://openkeyval.org/) persistence service. There is no backend, everything is served out of Github Pages.
+**done** is built using [Twitter Flight](https://github.com/twitter/flight), and localStorage.
 
 ##Windows features
 
@@ -36,3 +31,8 @@ There is no registration for **done**, so you can save and load tasks to any use
 ##License
 
 **done** is provided under the Apache 2 license.
+
+##Credits
+
+Holder is a project by [Ivan Malopinsky](http://imsky.co).
+

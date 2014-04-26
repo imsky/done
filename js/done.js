@@ -9,16 +9,12 @@ require([
 		'controllers/addtask',
 		'controllers/textbar',
 		'controllers/task',
-		'controllers/tasks',
-		'controllers/settings',
-		'controllers/credentials'
+		'controllers/tasks'
 ], function (Flight, _Piecon, Store, Howler, Templates, Data, DocumentController, AddTaskController, TextbarController, TaskController, TasksController, SettingsController, CredentialsController) {
 	AddTaskController.attachTo("#addtask")
 	TextbarController.attachTo("#error", {event: "error"})
 	TextbarController.attachTo("#notification", {event: "notification"})
 	TasksController.attachTo("#tasks")
-	SettingsController.attachTo("#settings")
-	CredentialsController.attachTo("#credentials")
 	DocumentController.attachTo(document)
 
 	Piecon.setOptions({
