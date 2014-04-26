@@ -1,6 +1,6 @@
 #done
 
-![done in browser](http://donegtd.com/screenshot_browser.jpg)
+![done in browser](http://imsky.github.io/done/screenshot_browser.jpg)
 
 **done** is a task management app that lets you time and order tasks as necessary.
 
@@ -20,7 +20,7 @@ You can drag and drop tasks to order them as you like. Put the important stuff f
 
 ##Windows features
 
-![done in windows](http://donegtd.com/screenshot_snap.jpg?0)
+![done in windows](http://imsky.github.io/done/screenshot_snap.jpg?0)
 
 **done** supports both Snap mode in Windows 8 and Pinned Sites in IE9+. This way, users can see the task list while they're working, and open **done** instantly from the task bar.
 
