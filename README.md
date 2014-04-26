@@ -34,5 +34,5 @@ You can drag and drop tasks to order them as you like. Put the important stuff f
 
 ##Credits
 
-Holder is a project by [Ivan Malopinsky](http://imsky.co).
+done is a project by [Ivan Malopinsky](http://imsky.co).
 
