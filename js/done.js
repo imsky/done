@@ -1,5 +1,5 @@
 require([
-    'flight/lib/index',
+    'lib/flight.min',
     'lib/piecon.min',
     'lib/amplify.store',
     'lib/howler.min',
