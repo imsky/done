@@ -1,0 +1,18 @@
+{
+  "preset": "default",
+  "plugins": [
+        "esformatter-semicolons"
+    ],
+    "quotes": {
+        "type": "single",
+        "avoidEscape": false
+    },
+    "indent": {
+        "value": "    "
+    },
+    "whiteSpace": {
+        "after": {
+            "FunctionReservedWord": 1
+        }
+    }
+}
