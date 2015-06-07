@@ -1,6 +1,6 @@
 define([
-    'flight/lib/component'
-], function (def) {
+    'lib/flight.min'
+], function (Flight) {
     function component() {
         this.after("initialize", function () {
             var timer = null;
@@ -17,6 +17,6 @@ define([
             });
         });
     }
-    return def(component);
+    return Flight.component(component);
 }
 );

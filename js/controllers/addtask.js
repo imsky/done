@@ -1,6 +1,6 @@
 define([
-    'flight/lib/component'
-], function (def) {
+    'lib/flight.min'
+], function (Flight) {
     function component() {
         var minutes = 15;
 
@@ -64,6 +64,6 @@ define([
             this.trigger("renderTime");
         });
     }
-    return def(component);
+    return Flight.component(component);
 }
 );

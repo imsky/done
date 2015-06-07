@@ -1,15 +1,15 @@
 define([
-    'flight/lib/component',
+    'lib/flight.min',
     'data',
     'templates'
-], function (def, Data, Templates) {
+], function (Flight, Data, Templates) {
     function component() {
         this.defaultAttrs({
             'time': '.tasktime',
             'control': '.controlbutton',
             'delete': '.deletebutton'
         });
-        this.after("initialize", function (evt) {
+        this.after("initialize", function (el, evt) {
             this.task = Data.get(evt.task);
 
             this.on("click", {
@@ -59,6 +59,6 @@ define([
 
         });
     }
-    return def(component);
+    return Flight.component(component);
 }
 );

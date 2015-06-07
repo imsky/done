@@ -1,20 +1,19 @@
 define([
-    'flight/lib/component',
+    'lib/flight.min',
     'data',
     'templates',
-], function (def, Data, Templates) {
+], function (Flight, Data, Templates) {
     function component() {
-
         this.defaultAttrs({
             'settings-button': "#settings-button"
         });
 
-        this.after("initialize", function () {
+        this.after("initialize", function (el) {
 
             var that = this;
             var notificationTimer = null;
             var minuteTimer = null;
-            var originalTitle = document.title;
+            var originalTitle = el.title;
 
             function startTimer() {
                 stopTimer();
@@ -42,6 +41,7 @@ define([
             });
 
             this.on("task:play", function () {
+                var task = Data.active();
                 startTimer();
                 this.trigger("favicon:update");
             });
@@ -56,11 +56,20 @@ define([
             });
 
             this.on("tasks:update", function (evt, task) {
-                if (Data.active() && Data.credentials()) {
+                if (Data.active()) {
                     var active = Data.active();
                     if (active.minutes > 1) {
                         this.trigger("tasks:save");
                     }
+                }
+                this.trigger("title:update");
+            });
+
+            this.on("title:update", function () {
+                if (Data.active()) {
+                    el.title = Data.active().title;
+                } else {
+                    el.title = originalTitle;
                 }
             });
 
@@ -134,5 +143,5 @@ define([
             startTimer();
         });
     }
-    return def(component);
+    return Flight.component(component);
 });

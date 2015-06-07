@@ -1,9 +1,9 @@
 define([
-    'flight/lib/component',
+    'lib/flight.min',
     'data',
     'templates',
     'controllers/task'
-], function (def, Data, Templates, TaskController) {
+], function (Flight, Data, Templates, TaskController) {
     function component() {
         this.after("initialize", function (evt) {
 
@@ -116,6 +116,6 @@ define([
             });
         });
     }
-    return def(component);
+    return Flight.component(component);
 }
 );
